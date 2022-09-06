@@ -78,8 +78,8 @@ function createTask(e) {
 function cardActions(e) {
   if ($(e.target).hasClass("remove-item")) {
     if (confirm("Delete Task?")) {
-      $(e.target.parentElement.parentElement).slideUp("slow", function () {
-        e.target.parentElement.parentElement.remove();
+      $(e.target).parent().parent().slideUp("slow", function () {
+        this.remove();
         deleteTask($(e.target).parent().parent().text());
       });
     }
